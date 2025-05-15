@@ -18,4 +18,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/YT-Ali/n8n-docker-ffmpeg:latest
+          tags: ghcr.io/yt-ali/n8n-docker-ffmpeg:latest
