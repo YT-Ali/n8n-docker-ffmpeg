@@ -3,3 +3,4 @@ USER root
 RUN apk add --no-cache ffmpeg
 LABEL org.opencontainers.image.source https://github.com/yt-ali/n8n-docker-ffmpeg
 USER node
+# Trigger rebuild
