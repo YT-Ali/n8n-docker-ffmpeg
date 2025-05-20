@@ -1,5 +1,5 @@
-FROM n8nio/n8n:1.86.1
+FROM ghcr.io/yt-ali/n8n-docker-ffmpeg:latest
 USER root
-RUN apk add --no-cache ffmpeg curl
-LABEL org.opencontainers.image.source="https://github.com/yt-ali/n8n-docker-ffmpeg"
+RUN mkdir -p /tmp/n8n/test && chmod 777 /tmp/n8n/test
+RUN apk add --no-cache curl
 USER node
