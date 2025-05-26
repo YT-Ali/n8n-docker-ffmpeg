@@ -20,3 +20,4 @@ jobs:
           file: Dockerfile
           push: true
           tags: ghcr.io/yt-ali/n8n-docker-ffmpeg:latest
+          no-cache: true
