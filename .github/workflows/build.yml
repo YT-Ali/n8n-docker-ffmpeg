@@ -25,3 +25,4 @@ jobs:
           tags: ghcr.io/yt-ali/n8n-docker-ffmpeg:latest
       - name: Output digest
         run: echo "Digest: ${{ steps.build.outputs.digest }}"
+
