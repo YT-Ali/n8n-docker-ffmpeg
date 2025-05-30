@@ -1,14 +1,15 @@
 FROM n8nio/n8n:1.94.1
 USER root
-# Alpine depolarını sabitle
+# Depoları sabitle
 RUN echo "https://dl-cdn.alpinelinux.org/alpine/v3.21/main" > /etc/apk/repositories && \
     echo "https://dl-cdn.alpinelinux.org/alpine/v3.21/community" >> /etc/apk/repositories
-# Depoları güncelle, cache’i temizle ve paketleri yükle
-RUN apk update && apk add --no-cache ffmpeg curl bash && \
-    apk upgrade && rm -rf /var/cache/apk/*
-# Bash’in yüklendiğini doğrula
+# Cache’siz güncelleme ve yükleme
+RUN apk update && apk add --no-cache ffmpeg curl bash && apk upgrade
+# Cache temizle
+RUN rm -rf /var/cache/apk/*
+# Bash doğrula
 RUN bash --version
-# Test dizinini oluştur
+# Test dizini
 RUN mkdir -p /tmp/n8n/test && chmod 777 /tmp/n8n/test && chown node:node /tmp/n8n/test
 USER node
 CMD ["n8n"]
