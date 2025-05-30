@@ -17,12 +17,9 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and push
         id: build
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v5
         with:
           context: .
           file: Dockerfile
           push: true
           tags: ghcr.io/yt-ali/n8n-docker-ffmpeg:latest
-      - name: Output digest
-        run: echo "Digest: ${{ steps.build.outputs.digest }}"
-
